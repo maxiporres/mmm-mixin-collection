@@ -1,0 +1,27 @@
+
+// KEYFRAME
+// --------------------------------------------------------------
+=keyframe($animation_name)
+	@-webkit-keyframes #{$animation_name}
+		@content
+
+	@-moz-keyframes #{$animation_name}
+		@content
+
+	@-o-keyframes #{$animation_name}
+		@content
+
+	@keyframes #{$animation_name}
+		@content
+
+
+// ANIMATION
+// --------------------------------------------------------------
+=animation($animation-name, $duration, $delay, $direction: forward, $fillmode: fowards)
+	+prefixer(animation-name, $animation-name, webkit moz ms spec)
+	+prefixer(animation-duration, $duration, webkit moz ms spec)
+	+prefixer(animation-delay, $delay, webkit moz ms spec)
+	+prefixer(animation-direction, $direction, webkit moz ms spec)
+	+prefixer(animation-fill-mode, $fillmode, webkit moz ms spec)
+
+

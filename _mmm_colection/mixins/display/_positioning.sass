@@ -1,0 +1,20 @@
+
+// POSITIONING
+// --------------------------------------------------------------
+=position($position, $args)
+	position: $position
+	@each $o in top right bottom left
+		$i: index($args, $o)
+		@if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number
+			#{$o}: nth($args, $i + 1)
+
+
+// Positioning helpers
+=absolute($args: "")
+	+position(absolute, $args)
+
+=fixed($args: "")
+	+position(fixed, $args)
+
+=relative($args: "")
+	+position(relative, $args)

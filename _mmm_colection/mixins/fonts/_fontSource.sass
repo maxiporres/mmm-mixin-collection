@@ -1,0 +1,11 @@
+
+
+// FONT SOURCE
+// --------------------------------------------------------------
+=fontSource($size-font, $font, $colour, $weight: false )
+	+fontSize($size-font)
+	font-family: $font
+	color: $colour
+
+	@if $weight 
+	font-weight: $weight

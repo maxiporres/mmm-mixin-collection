@@ -1,0 +1,88 @@
+
+// BASE TRANSFORM
+// --------------------------------------------------------------
+=transform($property, $value)
+	// @if $browser-prefixes
+	// 	+prefixer(transform, #{$property}unquote("(")#{$value}unquote(")"), webkit moz ms o spec)
+	// @else
+	// 	transform: #{$property}unquote("(")#{$value}unquote(")")
+	-webkit-transform: #{$property}unquote("(")#{$value}unquote(")")
+	-moz-transform: #{$property}unquote("(")#{$value}unquote(")")
+	-ms-transform: #{$property}unquote("(")#{$value}unquote(")")
+	-o-transform: #{$property}unquote("(")#{$value}unquote(")")
+	transform: #{$property}unquote("(")#{$value}unquote(")")
+
+
+// ROTATE
+// --------------------------------------------------------------
+=rotate($deg)
+	+transform(rotate, $deg)
+
+=rotateX($deg)
+	+transform(rotateX, $deg)
+
+=rotateY($deg)
+	+transform(rotateY, $deg)
+
+=rotateZ($deg)
+	+transform(rotateZ, $deg)
+
+=rotate3d($x, $y, $z, $deg)
+	$multi-var: $x, $y, $z, $deg
+	+transform(rotate3d, $multi-var)
+
+	
+// SCALE $scale
+// --------------------------------------------------------------
+=scale($scale)
+	+transform(scale, $scale)
+
+=scaleX($scale)
+	+transform(scaleX, $scale)
+
+=scaleY($scale)
+	+transform(scaleY, $scale)
+
+=scaleZ($scale)
+	+transform(scaleZ, $scale)
+
+=scale3d($x, $y, $z)
+	$multi-var: $x, $y, $z
+	+transform(scale3d, $multi-var)
+
+
+// SKEW
+// --------------------------------------------------------------
+=skew($x, $y)
+	$multi-var: $x, $y
+	+transform(skew, $multi-var)
+	backface-visibility: hidden
+
+=skewX($deg)
+	+transform(skewX, $deg)
+	backface-visibility: hidden
+
+=skewY($deg)
+	+transform(skewY, $deg)
+	backface-visibility: hidden
+
+
+// TRANSLATE
+// --------------------------------------------------------------
+=translate($x, $y)
+	$multi-var: $x, $y
+	+transform(translate, $multi-var)
+
+=translateX($x)
+	+transform(translateX, $x)
+
+=translateY($y)
+	+transform(translateY, $y)
+
+=translateZ($z)
+	+transform(translateZ, $z)
+
+=translate3d($x, $y, $z)
+	$multi-var: $x, $y, $z
+	+transform(translate3d, $multi-var)
+
